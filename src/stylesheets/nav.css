@@ -1,0 +1,58 @@
+nav{
+    background-color: #1E2531;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav b{
+    color: brown;
+    padding: 1em 0em 1em 1em;
+}
+
+.nav{
+    display: flex;
+    border: 0px;
+    margin: 0em 3em 0em 0em;
+    padding-top:0em;
+    padding-bottom: 0em;
+    color: #010101;
+    list-style-type: none;
+}
+
+
+.nav b{
+    color: brown;
+    text-align: center;
+    padding: 1em;
+}
+
+.nav li{
+    padding-top: 1em;
+}
+
+.nav a{
+    padding: 1em;
+    font-size: 1em;
+    margin: 0em;
+    text-decoration: none;
+    border-bottom: transparent;
+    transition: background-color 0.2s;
+}
+
+.nav li .button{
+    background-color: brown;
+    padding: 0.6em;
+    margin-left: 1em;
+    border-radius: 0.4em;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+
+.nav .button:hover{  
+    background-color: #6D0000;
+}
+
+.nav a:hover{
+    background-color: #283141;
+}

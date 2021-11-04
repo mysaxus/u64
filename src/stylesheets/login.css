@@ -1,0 +1,57 @@
+.form{
+    width:25%;
+    margin: auto;
+    padding: 2em;
+    align-items: center;
+    text-align: center;
+}
+
+
+.form h4{
+    padding-bottom: 2em;
+    font-size: 1.3em;
+}
+
+.form label{
+    font-size: 1.3em;
+}
+
+.form .question{
+    font-weight: 600;
+}
+
+.form input{
+    color: black;
+    padding: 0.3em;
+    border-radius: 0.4em;
+    font-size: 1em;
+    width: 50%;
+}
+
+.form .options{
+    font-size: 0.8em;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.form .options input{
+    width: 10%;
+    
+}
+
+.form .button{
+    margin-top: 1em;
+    width: auto;
+    padding: 0.6em;
+    color: white;
+    background-color: #333F53;
+    font-size: 1.4em;
+    font-family: Montserrat, Open Sans, Helvetica, Arial, Times;
+    transition: background-color 0.2s;
+
+}
+
+.form .button:hover{
+    background-color: #3E4D65;
+    cursor: pointer;
+}

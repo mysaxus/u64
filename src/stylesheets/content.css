@@ -1,0 +1,24 @@
+.content h1, h2, h3, iframe{
+    text-align: center;
+}
+
+.content h2, .content h3{
+    font-size: 2.8em;
+}
+
+.content .links{
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.img{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 12em);
+    justify-items: center;
+    justify-content: center;
+}
+
+.peca{
+    max-height: 15em;
+    margin: 1em;
+}

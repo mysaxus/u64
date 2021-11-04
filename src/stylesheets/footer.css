@@ -1,0 +1,9 @@
+footer{
+    background-color: #1E2531;
+    padding:.4em;
+    position: relative;
+}
+
+footer p{
+    font-size: 0.8em;
+}
