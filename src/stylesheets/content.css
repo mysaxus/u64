@@ -1,14 +1,60 @@
 .content h1, h2, h3, iframe{
     text-align: center;
+    padding: 0.5em;
 }
 
 .content h2, .content h3{
     font-size: 2.8em;
 }
 
+.content .presentation{
+    text-align: center;
+    font-size: 1em;
+    padding: 0;
+    margin: 0;
+    color: #999999;
+}
+
+.content .guide{
+    font-size: 1.3em;
+}
+
+.content .guide ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.content .guide a{
+    padding: 0.4em;
+    background-color: brown;
+    border-radius: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.content .guide a:hover{
+    background-color: #6D0000;
+}
+
 .content .links{
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.6em;
+}
+
+.content .links a{
+    transition: color 0.3s;
+}
+
+.content .links a:hover{
+    color: brown;
+}
+
+.content .links p{
+    font-size: 0.7em;
+    padding: 0;
+    margin: 0;
+    color: #999999;
 }
 
 .img{

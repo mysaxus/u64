@@ -1,4 +1,27 @@
-table{
+.trivia .guide{
+    font-size: 1.3em;
+}
+
+.trivia .guide ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.trivia .guide a{
+    padding: 0.4em;
+    background-color: brown;
+    border-radius: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.trivia .guide a:hover{
+    background-color: #6D0000;
+}
+
+
+.trivia table{
     margin-left: auto;
     margin-right: auto;
     padding: 1.5em 5.5em 1.5em;
@@ -6,22 +29,33 @@ table{
     width: 50%;
 }
 
-tr, th, td{
+.trivia tr,.trivia th,.trivia td{
     padding: 5px;
 }
 
-tr:hover{
+.trivia tr:hover{
     background-color: gray;
 }
 
-ul, ol{
+.trivia .tabelas ul, .trivia .tabelas ol{
     padding-bottom: 1em;
-    text-align: left;
-    margin-left: 35%;
-    list-style-type: auto;
+    text-align: center;
 }
 
-.alert{
+.trivia .tabelas ul{
+    list-style-type: disc;
+}
+
+.trivia .tabelas ol{
+    list-style-type: decimal;
+}
+
+.trivia .tabelas li{
+    display: inline-block;
+    padding-bottom: 0.6em;
+}
+
+.trivia .alert{
     color: brown;
     text-align: center;
     font-size: 8em;

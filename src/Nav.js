@@ -9,7 +9,7 @@ function Nav(){
         <header>
             <nav>
                 <b>U64</b>
-                <ul class="nav"> 
+                <ul className="nav"> 
                     <li><a href="/">Página inicial</a></li>
                     <li><a href="/tutoriallanding">Tutorial</a></li>
                     <li><a href="/content">Conteúdos</a></li>
@@ -17,8 +17,8 @@ function Nav(){
                     <li><a href="/trivia">Trivia</a></li>
                     <li><a href="/about">Sobre nós</a></li>
                 </ul>
-                <ul class="nav">
-                    <li><a class="button" href="/login">Faça login</a></li>
+                <ul className="nav">
+                    <li><a className="button" href="/login">Faça login</a></li>
                 </ul>
             </nav>
         </header>

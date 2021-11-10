@@ -1,114 +1,66 @@
-import React from 'react';
+import React, {useRef, useState } from 'react';
 
+import { auth, firebase } from './services/firebase';
+
+import './stylesheets/style.css';
 import './stylesheets/login.css';
+import loginimg from './images/signinimg.png';
+import { useAuth } from './contexts/AuthContext';
+import {useHistory } from 'react-router-dom';
 
 function Login(){
+
+    const emailRef = useRef();
+    const passwordRef = useRef();
+    
+    const { login } = useAuth();
+
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const history = useHistory();
+
+    async function handleSubmit(e){
+        e.preventDefault()
+
+        try{
+            setError('')
+            setLoading(true)
+            await login(emailRef.current.value, passwordRef.current.value)
+            history.push("/account");
+        } catch{
+            setError('E-mail e/ou senha incorretos')
+        }
+        setLoading(false)
+    }
+
     return(
-        <div class="login">
-            <div class="header">
-                <h1>Adentre no U64</h1>
-                <h2>Faça login</h2>
-        <div class="form box">
-            <form>
-                <label class="question">Email:</label>
-                <br/>
-                <br/>
-                <input type="text" name=""/>
-                <br/>
-                <br/>
-                <label class="question">Senha:</label>
-                <br/>
-                <br/>
-                <input type="password" name=""/>
-                <br/>
-                <br/>
-                <input class="button" type="button" onclick="alert('Login realizado com sucesso!')" value="Fazer login"/>
-                <br/>
-            </form>
-        </div>
-
-        <h2>Crie sua conta</h2>
-        <div class="form box">
-            <form>
-                <h4>Preencha os dados:</h4>
-                <label class="question">Email:</label>
-                <br/>
-                <br/>
-                <input type="text" name=""/>
-                <br/>
-                <br/>
-                <label class="question">Senha:</label>
-                <br/>
-                <br/>
-                <input type="password" name=""/>
-                <br/>
-                <br/>
-                <label class="question">Confirmar senha:</label>
-                <br/>
-                <br/>
-                <input type="password" name=""/>
-                <br/>
-                <br/>
-                <div class="options">
-                    <label class="question">Quão bem você joga xadrez?</label><br/><br/>
-
-                    <input type="radio" name="createacc" id="leigo" value="1"/>
-                    <label for="1">Nunca joguei</label><br/><br/>
-
-                    <input type="radio" name="createacc" id="basico" value="2"/>
-                    <label for="2">Sei mover as peças</label><br/><br/>
-
-                    <input type="radio" name="createacc" id="engajado" value="3"/>
-                    <label for="3">Jogo casualmente</label><br/><br/>
-
-                    <input type="radio" name="createacc" id="intermediario" value="4"/>
-                    <label for="4">Jogo com frequência</label><br/><br/>
-
-                    <input type="radio" name="createacc" id="avançado" value="5"/>
-                    <label for="5">Meu rating é 2000+</label><br/><br/>
-                </div>
-
-                <div class="options">
-                    <label class="question">Selecione seus jogadores favoritos</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Magnus Carlsen</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Fabiano Caruana</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Ding Liren</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Garry Kasparov</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Anatoly Karpov</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Tigran Petrosian</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Bobby Fischer</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Hikaru Nakamura</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Emanuel Lasker</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label>Paul Morphy</label><br/><br/>
-
-                    <input type="checkbox"/>
-                    <label> Danill Dubov</label><br/><br/>
+        <div className="login">
+            <div className="header">
+                <h1>Faça login</h1>
             </div>
-
-            <input class="button" type="button" onclick="alert('Conta registrada com sucesso!')" value="Registrar conta"/>
-
-            </form>
-        </div>
+            <div className="loginpage">
+                <img src={loginimg} alt="Login"/>
+                <div className="form box">
+                    <form onSubmit={handleSubmit}>
+                        <label className="question">Email:</label>
+                        <br/>
+                        <br/>
+                        <input type="text" name="" ref={emailRef} required/>
+                        <br/>
+                        <br/>
+                        <label className="question">Senha:</label>
+                        <br/>
+                        <br/>
+                        <input type="password" name="" ref={passwordRef} required/>
+                        <br/>
+                        <br/>
+                        <input disabled={loading} className="button" type="submit" value="Fazer login"/>
+                    </form>
+                    <div className="clickhere">
+                    {error && <p>{error}</p>}
+                        <a href="/signup">Não tem conta? Crie uma agora.</a> 
+                    </div>
+                </div>
             </div>
         </div>
     );

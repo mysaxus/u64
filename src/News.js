@@ -4,16 +4,16 @@ import './stylesheets/news.css';
 
 function News(){
     return(
-        <div class="news">
-            <div class="header">
+        <div className="news">
+            <div className="header">
                 <h1>Notícias</h1>
             </div>
 
             <h2>Torneios</h2>
 
-            <p class="alert">Faltam poucas semanas pro campeonato mundial de 2021</p>
+            <p className="alert">Faltam poucas semanas pro campeonato mundial de 2021</p>
             
-            <div class="box">
+            <div className="box">
                 <h2>Campeonato dos EUA</h2>
                 <p>Pela terceira vez em sua carreira, <b>Wesley So</b> vence o terceiro campeonato dos Estados Unidos, derrubando
                     gigantes no xadrez como <b>Fabiano Caruana</b> e <b>Hikaru Nakamura</b>. O jogador tem tido um crescimento notório e é
@@ -32,7 +32,7 @@ function News(){
                 </p>
             </div>
 
-            <div class="box">
+            <div className="box">
                 <h2>Campeonato mundial</h2>
                 <p> <b>Magnus Carlsen</b> defenderá seu título no final de 2021 contra o desafiante <b>Ian Nepomniachtchi</b>,
                     ganhador do Torneio de Candidatos e detentor de um estilo de jogo agressivo e atacante. 
@@ -44,11 +44,11 @@ function News(){
                 <p>O favorito do torneio de candidatos <b>Fabiano Caruana</b>, desafiante de 2018 contra Carlsen, se saiu
                     mal depois da volta do torneio após os ajustes de quarentena do COVID-19, quebrando
                     as expectativas dos espectadores. <b>Ding Liren</b>, a promessa do xadrez da China, obteve um início favorecido
-                    mas teve um nível aquém do esperado na segunda parte do torneio, ficando para trás na classificação.
+                    mas teve um nível aquém do esperado na segunda parte do torneio, ficando para trás na classNameificação.
                 </p>
             </div>
             
-            <div class="box">
+            <div className="box">
                 <h2>Norway Chess</h2>
                 <p>O torneio se encerrou dia 18 de setembro de 2021. O favorito e campeão mundial <b>Magnus Carlsen</b> conseguiu
                     obter a vitória sobre jogadores formidáveis como <b>Aryan Tari</b>, <b>Alireza Firouja</b> e <b>Ian Nepomniachtchi</b>. Apesar

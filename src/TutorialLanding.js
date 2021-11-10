@@ -4,8 +4,8 @@ import './stylesheets/tutoriallanding.css';
 
 function TutorialLanding(){
     return(
-        <div class="tutoriallanding">
-            <div class="header">
+        <div className="tutoriallanding">
+            <div className="header">
                 <h1>Tutoriais</h1>
             </div>
         </div>

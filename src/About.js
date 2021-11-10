@@ -4,12 +4,12 @@ import './stylesheets/about.css';
 
 function About(){
     return(
-        <div class="about">
-            <div class="header">
+        <div className="about">
+            <div className="header">
                 <h1>Sobre nós</h1>
             </div>
 
-            <div class="box">
+            <div className="box">
                 <h2>Xadrez é chato? Óbvio que é</h2>
                 <p>Por que as pessoas acham xadrez chato? Alguns falam de dificuldade, de ter
                     que pensar muito, de ser parado, sem graça, repetitivo, e vários outros pontos negativos.
@@ -40,8 +40,8 @@ function About(){
                  gratificantes quanto qualquer outro jogo. <b>Para aqueles que se empenham e se dispõem a conhecer este universo, há muito 
                  mais do que 64 casas te esperando.</b></p>
 
-                 <div class="button">
-                    <a href="/login" class="button">Conheça o xadrez</a>
+                 <div className="button">
+                    <a href="/login" className="button">Conheça o xadrez</a>
                 </div>
 
                 <p>
@@ -50,7 +50,7 @@ function About(){
                 </p>
             </div>
 
-            <div class="box">
+            <div className="box">
                 <h2>Havia uma iniciativa?</h2>
                 <p>O Universo 64 vem com o objetivo de trazer conteúdo gratuito do mundo de xadrez para todos. O princípio parte de que 
                 este é um jogo que beneficia suficiente a vida dos seus entusiastas a ponto de ser um bem grandioso suficiente para 

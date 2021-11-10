@@ -1,4 +1,3 @@
-import React from 'react';
 
 import bispo from './images/bispo.jpg';
 import torre from './images/torre.jpg';
@@ -12,15 +11,19 @@ import './stylesheets/style.css';
 
 function Content(){
     return(
-        <div class="content">
+        <div className="content">
 
-            <div class="header">
+            <div className="header">
                 <h1>Conteúdo</h1>
             </div>
 
-            <div class="box">
-                <h2>Guia da página</h2>
-                <div class="guide">
+            <div className="presentation">
+                <p>Aproveite todo tipo de material provido pelo nosso site!</p>
+            </div>
+
+            <div className="box">
+                <h2>O que está procurando?</h2>
+                <div className="guide">
                     <ul>
                         <li>
                             <a href="#image">Imagens</a>
@@ -39,26 +42,30 @@ function Content(){
             </div>
 
             <h2>Links para sites de xadrez online</h2> 
-            <div class="links">
+            <div className="links">
                 <a href="https://www.chess.com/home">Chess.com</a>
+                <p>Um site completo com todo tipo de conteúdo e conta com a presença
+                    dos profissionais!
+                </p>
                 <br/><br/>
                 <a href="https://lichess.org/">Lichess</a><br/>
+                <p>Design simplista para aqueles que desejam apenas o desafio do tabuleiro</p>
                 <br/><br/>
             </div>
             <h2 id="image">Imagens</h2> 
             <h4>Abaixo, seguem imagens de peças de xadrez e suas aparências em jogo.</h4>
-            <div class = "img">
-                <img class = "peca" src={rei} alt="Rei"  border="15" /> 
-                <img class = "peca" src={dama} alt="Rainha" border="15" /> 
-                <img class = "peca" src={torre} alt="Torre" border="15" />
-                <img class = "peca" src={bispo}alt="Bispo" border="15" /> 
-                <img class = "peca" src={cavalo} alt="Cavalo" border="15" /> 
-                <img class = "peca" src={peao} alt="Peão" border="15" />
+            <div className = "img">
+                <img className = "peca" src={rei} alt="Rei"  border="15" /> 
+                <img className = "peca" src={dama} alt="Rainha" border="15" /> 
+                <img className = "peca" src={torre} alt="Torre" border="15" />
+                <img className = "peca" src={bispo}alt="Bispo" border="15" /> 
+                <img className = "peca" src={cavalo} alt="Cavalo" border="15" /> 
+                <img className = "peca" src={peao} alt="Peão" border="15" />
             </div>
 
             <h2 id="video">Vídeos</h2>
 
-            <div class="box">
+            <div className="box">
 
                 <h3>Hikaru Nakamura vs Garry Kasparov (2017)</h3>
                 
@@ -72,7 +79,7 @@ function Content(){
                 src="https://www.youtube.com/embed/ArHtFdOOp-A">
                 </iframe></h2>
             </div>
-            <div class="box">
+            <div className="box">
 
                 <h3>Magnus Carlsen se tornando o Campeão Mundial de Partidas Rápidas (2019)</h3>
 
@@ -87,11 +94,11 @@ function Content(){
                 </iframe>
                 </h2>
             </div>
-            <div class="box">
-                <h3>Magnus Carlsen jogando contra Supi</h3>
+            <div className="box">
+                <h3>Magnus Carlsen vs Supi (amistoso)</h3>
                 
                 <p>O Grande Mestre brasileiro Luis Paulo Supi confrontou o campeão mundial em uma partida blitz
-                    online e realizou uma perfomance de cair o queixo de qualquer um, inclusive do seu oponente.
+                    online na plataforma chess24 e realizou uma perfomance de cair o queixo de qualquer um, inclusive do seu oponente.
                 </p>
 
                 <h2>

@@ -6,20 +6,20 @@ import landing from './images/landingimg.png';
 
 function Landing(){
     return(
-        <div class="landing">
-            <div class="header">
+        <div className="landing">
+            <div className="header">
                 <h1><b>U</b>niverso <b>64</b></h1>
             </div>
 
-            <div class="herocontent">
+            <div className="herocontent">
 
-                <img class="landingimg" src={landing} alt="" />
+                <img className="landingimg" src={landing} alt="Quem é o rei?" />
 
-                <div class="texthero">
+                <div className="texthero">
                     <h2>Torne-se o rei do maior jogo de tabuleiro do mundo.</h2>
                 
-                    <div class="aboutbuttondiv">          
-                        <a class="aboutbutton" href="/about">Saiba mais</a>     
+                    <div className="aboutbuttondiv">          
+                        <a className="aboutbutton" href="/about">Saiba mais</a>     
                     </div>
                 </div>
             </div>
