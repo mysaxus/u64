@@ -60,6 +60,9 @@ function Login(){
                     {error && <p>{error}</p>}
                         <a href="/signup">Não tem conta? Crie uma agora.</a> 
                     </div>
+                    <div className="clickhere">
+                        <a href="/forgotpassword">Esqueceu a senha?</a> 
+                    </div>
                 </div>
             </div>
         </div>

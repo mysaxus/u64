@@ -1,0 +1,23 @@
+.account .content{
+    display: flex;
+}
+
+
+.account button{
+    margin: auto;
+    text-align: center;
+    width: auto;
+    border-radius: 0.4em;
+    padding: 0.6em;
+    color: white;
+    background-color: brown;
+    font-size: 1.4em;
+    font-weight: 600;
+    font-family: Montserrat, Open Sans, Helvetica, Arial, Times;
+    transition: background-color 0.2s;
+}
+
+.account button:hover{
+    background-color: #6D0000;
+    cursor: pointer;
+}

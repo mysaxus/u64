@@ -1,7 +1,6 @@
-import React, { createContext } from "react";
+import React from "react";
 import {Route} from 'react-router-dom';
 
-import { useState } from "react";
 
 import Content from "./Content";
 import News from "./News";
@@ -13,9 +12,12 @@ import Landing from "./Landing";
 import Footer from "./Footer";
 import Login from './Login';
 import SignUp from "./Signup";
+import ForgotPassword from "./ForgotPassword";
 import { Account } from "./Account";
+import PrivateRoute from "./PrivateRoute";
 
 import { AuthProvider } from "./contexts/AuthContext";
+import { formatDiagnostic } from "typescript";
 
 function App() {
 
@@ -31,7 +33,8 @@ function App() {
         <Route exact path="/tutoriallanding" component={TutorialLanding}></Route>
         <Route exact path="/login" component={Login}></Route>
         <Route exact path="/signup" component={SignUp}></Route>
-        <Route exact path="/account" component={Account}></Route>
+        <Route exact path="/forgotpassword" component={ForgotPassword}></Route>
+        <PrivateRoute exact path="/account" component={Account}></PrivateRoute>
 
         <Footer />
       </AuthProvider>
