@@ -3,6 +3,7 @@ import React from 'react';
 import './stylesheets/style.css';
 import './stylesheets/landing.css';
 import landing from './images/landingimg.png';
+import chessback from './images/chessback.png';
 
 function Landing(){
     return(

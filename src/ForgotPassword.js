@@ -13,9 +13,10 @@ export default function ForgotPassword(){
     const [loading, setLoading] = useState(false);
     const { resetPassword } = useAuth();
 
-    async function handleReset(){
-        setError('')
-        setLoading(true)
+    async function handleReset(e){
+
+        e.preventDefault()
+
         try{
             setMessage('')
             setError('')
@@ -42,10 +43,12 @@ export default function ForgotPassword(){
                     <input disabled={loading} className="button" type="submit" value="Enviar e-mail"/>
                 </form>
                 <div className="clickhere">
-                    {error && <p>{error}</p>}
-                    {message && <p>{message}</p>}
                     <a href="/login">Voltar</a> 
                 </div>
+            </div>
+            <div className="messages">
+                {error && <p className="error">{error}</p>}
+                {message && <p className="message">{message}</p>}
             </div>
         </div>
     )

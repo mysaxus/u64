@@ -1,8 +1,10 @@
 .landing{
     font-family: Montserrat, Open Sans, Helvetica, Arial, Times;
-    background: linear-gradient(black, #313131);
     width: 100%;
+    background: linear-gradient(black, #313131);
     margin-bottom: 3em;
+    z-index: 1;
+    position: relative
 }
 
 .landing h1, .landing h2{

@@ -44,7 +44,7 @@ function News(){
                 <p>O favorito do torneio de candidatos <b>Fabiano Caruana</b>, desafiante de 2018 contra Carlsen, se saiu
                     mal depois da volta do torneio após os ajustes de quarentena do COVID-19, quebrando
                     as expectativas dos espectadores. <b>Ding Liren</b>, a promessa do xadrez da China, obteve um início favorecido
-                    mas teve um nível aquém do esperado na segunda parte do torneio, ficando para trás na classNameificação.
+                    mas teve um nível aquém do esperado na segunda parte do torneio, ficando para trás na classificação.
                 </p>
             </div>
             

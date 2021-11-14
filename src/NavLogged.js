@@ -3,7 +3,7 @@ import React from 'react';
 import './stylesheets/style.css';
 import './stylesheets/nav.css';
 
-function Nav(){
+function NavLogged(){
 
 
     return(
@@ -19,11 +19,11 @@ function Nav(){
                     <li><a href="/about">Sobre nós</a></li>
                 </ul>
                 <ul className="nav">
-                    <li><a className="button" href="/login">Faça login</a></li>
+                    <li><a className="button" href="/account">Meu perfil</a></li>
                 </ul>
             </nav>
         </header>
     );
 }
 
-export default Nav;
+export default NavLogged;

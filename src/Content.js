@@ -5,6 +5,10 @@ import cavalo from './images/cavalo.jpg';
 import peao from './images/peão.jpg';
 import dama from './images/queen.jpg';
 import rei from './images/king.jpg';
+import meme1 from './images/meme/meme1.png';
+import meme2 from './images/meme/meme2.png';
+import meme3 from './images/meme/meme3.png';
+import meme4 from './images/meme/meme4.png';
 
 import './stylesheets/content.css';
 import './stylesheets/style.css';
@@ -33,9 +37,6 @@ function Content(){
                         </li>
                         <li>
                             <a href="#meme">Memes</a>
-                        </li>
-                        <li>
-                            <a href="#forum">Fóruns</a>
                         </li>
                     </ul>
                 </div>
@@ -108,6 +109,18 @@ function Content(){
                 </h2>
             </div>
 
+            <h2 id="meme">Memes</h2>
+            <div className="meme">
+
+                    <img className = "memeimg" src={meme1} alt="Rei"  border="15" /> 
+
+                    <img className = "memeimg" src={meme2} alt="Rei"  border="15" /> 
+ 
+                    <img className = "memeimg" src={meme3} alt="Rei"  border="15" /> 
+
+                    <img className = "memeimg" src={meme4} alt="Rei"  border="15" /> 
+
+            </div>
         </div>
     );
 }

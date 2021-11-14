@@ -1,12 +1,13 @@
 import React, {useRef, useState } from 'react';
 
 import './stylesheets/style.css';
-import './stylesheets/login.css';
+import './stylesheets/tutorialtest.css';
 import loginimg from './images/signinimg.png';
 import { useAuth } from './contexts/AuthContext';
 import {useHistory } from 'react-router-dom';
+import TutorialLanding from './TutorialLanding';
 
-function Login(){
+function TutorialTest(){
 
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -35,7 +36,6 @@ function Login(){
         <div className="login">
             <div className="header">
                 <h1>Faça login</h1>
-                <h2>Para poder acessar tutoriais e outras funções, faça login no U64.</h2>
             </div>
             <div className="loginpage">
                 <img src={loginimg} alt="Login"/>
@@ -68,4 +68,4 @@ function Login(){
     );
 }
 
-export default Login;
+export default TutorialTest;

@@ -21,7 +21,7 @@ nav b{
 
 
 .nav b{
-    color: brown;
+    color: #a52a2a;
     text-align: center;
     padding: 1em;
 }
@@ -40,7 +40,7 @@ nav b{
 }
 
 .nav li .button{
-    background-color: brown;
+    background-color: #a52a2a;
     padding: 0.6em;
     margin-left: 1em;
     border-radius: 0.4em;

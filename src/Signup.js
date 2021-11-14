@@ -3,10 +3,13 @@ import React, {useRef}  from 'react';
 import './stylesheets/style.css';
 import './stylesheets/signup.css';
 
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { useAuth } from './contexts/AuthContext';
+
+import {db} from './services/firebase';
+import { collection, getDocs, addDoc } from 'firebase/firestore';
 
 function SignUp(){
 
@@ -17,8 +20,27 @@ function SignUp(){
     const { signup } = useAuth();
 
     const [error, setError] = useState('');
+    const [email, setEmail] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useHistory();
+
+    const [users, setUsers] = useState([]);
+    const usersCollectionRef = collection(db, "users")
+
+    useEffect(() =>{
+
+        const getUsers = async () => {
+            const data = await getDocs(usersCollectionRef);
+            setUsers(data.docs.map((doc) => ({...doc.data(), id: doc.id})))
+        }
+
+        getUsers();
+    },[])
+
+    const createUser = async () => {
+        await addDoc(usersCollectionRef, {email: email, rating: 1000, nivel: false})
+    }
+
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -52,7 +74,7 @@ function SignUp(){
                 <form onSubmit={handleSubmit}>
                     <h4>Preencha os dados:</h4>
                     <label className="question">Email:</label>
-                    <input type="text" name="email" ref={emailRef} required/>
+                    <input onChange={(event) => {setEmail(event.target.value)}} type="text" name="email" ref={emailRef} required/>
 
                     <label className="question">Senha:</label>
                     <input type="password" name="password" ref={passwordRef} required/>
@@ -60,97 +82,11 @@ function SignUp(){
                     <label className="question">Confirmar senha:</label>
                     <input type="password" name="passwordconfirm" ref={passwordConfirmRef} required/>
 
-                    <div className="options">
-                        <label className="question">Quão bem você joga xadrez?</label>
-
-                        <div className="option">
-                            <input type="radio" name="createacc" id="leigo" value="1"/>
-                            <label htmlFor="1">Nunca joguei</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="radio" name="createacc" id="basico" value="2"/>
-                            <label htmlFor="2">Sei mover as peças</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="radio" name="createacc" id="engajado" value="3"/>
-                            <label htmlFor="3">Jogo casualmente</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="radio" name="createacc" id="intermediario" value="4"/>
-                            <label htmlFor="4">Jogo com frequência</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="radio" name="createacc" id="avançado" value="5"/>
-                            <label htmlFor="5">Meu rating é 2000+</label>
-                        </div>
-                    </div>
-
-                    <div className="options">
-                        <label className="question">Selecione seus jogadores favoritos</label>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Magnus Carlsen</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Fabiano Caruana</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Ding Liren</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Garry Kasparov</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Anatoly Karpov</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Tigran Petrosian</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Bobby Fischer</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Hikaru Nakamura</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Emanuel Lasker</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label>Paul Morphy</label>
-                        </div>
-
-                        <div className="option">
-                            <input type="checkbox"/>
-                            <label> Danill Dubov</label>
-                        </div>
-                    </div>
-
-                    <a href="#"><input disabled={loading} className="button" type="submit" value="Registrar conta"/></a>
+                    <a href="#"><input onClick={createUser} disabled={loading} className="button" type="submit" value="Registrar conta"/></a>
                 </form>
             </div>
+
+
         </div>
     );
 }
