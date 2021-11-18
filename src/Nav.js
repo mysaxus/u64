@@ -13,7 +13,7 @@ function Nav(){
                 <b>U64</b>
                 <ul className="nav"> 
                     <li><a href="/">Página inicial</a></li>
-                    <li><a href="/tutoriallanding">Tutorial</a></li>
+                    <li><a href="/tutorial">Tutorial</a></li>
                     <li><a href="/content">Conteúdos</a></li>
                     <li><a href="/news">Noticias</a></li>
                     <li><a href="/about">Sobre nós</a></li>

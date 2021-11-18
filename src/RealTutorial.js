@@ -2,14 +2,13 @@ import React, { useEffect, useState } from 'react';
 
 import { useAuth } from './contexts/AuthContext';
 
-import TutorialAdv from './TutorialAdv';
-import TutorialInter from './TutorialInter';
-import TutorialBasic from './TutorialBasic';
+import TutorialLanding from './TutorialLanding';
+import TutorialTest from './TutorialTest';
 
 import {db} from './services/firebase';
 import { collection, getDocs} from 'firebase/firestore';
 
-export default function TutorialLanding(){
+export default function RealTutorial(){
 
     const {currentUser } = useAuth();
     const [users, setUsers] = useState([]);
@@ -25,22 +24,10 @@ export default function TutorialLanding(){
         getUsers();
     }, [])
 
-    function tutorialPage(x){
-        if(x<1400){
-            return <TutorialBasic />
-        }
-        else if(x<1800){
-            return <TutorialInter />
-        }
-        else{
-            return <TutorialAdv />
-        }
-    }
-
     return (
         users.map((user) => {
             if(user.email === currentUser.email){
-                return (tutorialPage(user.rating))
+                return (user.nivel ? <TutorialLanding /> : <TutorialTest />)
             }
         }))
 }

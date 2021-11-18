@@ -1,0 +1,55 @@
+.tutorial span{
+    color: brown;
+}
+
+.tutorial .niveltestintro{
+    text-align: center;
+}
+
+.tutorial .questao{
+    display: flex;
+    margin-left: 30%;
+}
+
+.tutorial .options{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 0;
+}
+
+.tutorial img{
+    max-width: 50%;
+    margin-bottom: 1em;
+}
+
+.tutorial .option{
+    font-family: Montserrat, Open Sans, Helvetica, Arial, Times;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 0.4em;
+    margin-bottom: 1em;
+    
+    padding: 1em;
+    background-color: #333F53;
+    transition: background-color 0.2s;
+}
+
+.tutorial .option:hover{
+    cursor: pointer;
+    background-color: #3E4D65;
+}
+
+.tutorial a{
+    padding: 1em;
+    transition: color 0.2s;
+}
+
+.tutorial a:hover{
+    color: brown;
+}
+
+.tutorial .result{
+    text-align: center;
+}

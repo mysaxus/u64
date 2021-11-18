@@ -21,13 +21,14 @@ function SignUp(){
 
     const [error, setError] = useState('');
     const [email, setEmail] = useState('');
+    const [nick, setNick] = useState('');
     const [loading, setLoading] = useState(false);
     const history = useHistory();
 
     const [users, setUsers] = useState([]);
     const usersCollectionRef = collection(db, "users")
 
-    useEffect(() =>{
+    useEffect(() => {
 
         const getUsers = async () => {
             const data = await getDocs(usersCollectionRef);
@@ -35,10 +36,10 @@ function SignUp(){
         }
 
         getUsers();
-    },[])
+    }, [])
 
     const createUser = async () => {
-        await addDoc(usersCollectionRef, {email: email, rating: 1000, nivel: false})
+        await addDoc(usersCollectionRef, {email: email, nick: nick, rating: 1000, nivel: false})
     }
 
 
@@ -60,7 +61,6 @@ function SignUp(){
         setLoading(false)
     }
 
-
     return(
         <div className="signup">
             <div className="header" id="signup">
@@ -74,19 +74,20 @@ function SignUp(){
                 <form onSubmit={handleSubmit}>
                     <h4>Preencha os dados:</h4>
                     <label className="question">Email:</label>
-                    <input onChange={(event) => {setEmail(event.target.value)}} type="text" name="email" ref={emailRef} required/>
+                    <input placeholder="example@gmail.com" onChange={(event) => {setEmail(event.target.value)}} type="text" name="email" ref={emailRef} required/>
+
+                    <label className="question">Nickname:</label>
+                    <input placeholder="nick123" onChange={(event) =>{setNick(event.target.value)}} type="text" name="nick" required/>
 
                     <label className="question">Senha:</label>
-                    <input type="password" name="password" ref={passwordRef} required/>
+                    <input placeholder="password" type="password" name="password" ref={passwordRef} required/>
 
                     <label className="question">Confirmar senha:</label>
-                    <input type="password" name="passwordconfirm" ref={passwordConfirmRef} required/>
+                    <input placeholder="password_again" type="password" name="passwordconfirm" ref={passwordConfirmRef} required/>
 
                     <a href="#"><input onClick={createUser} disabled={loading} className="button" type="submit" value="Registrar conta"/></a>
                 </form>
             </div>
-
-
         </div>
     );
 }

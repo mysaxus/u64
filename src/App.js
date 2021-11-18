@@ -16,6 +16,7 @@ import { Account } from "./Account";
 import PrivateRoute from "./PrivateRoute";
 
 import { AuthProvider } from "./contexts/AuthContext";
+import RealTutorial from "./RealTutorial";
 
 function App() {
 
@@ -27,11 +28,11 @@ function App() {
         <Route exact path="/about" component={About}></Route>
         <Route exact path="/content" component={Content}></Route>
         <Route exact path="/news" component={News}></Route>
-        <PrivateRoute exact path="/tutoriallanding" component={TutorialLanding}></PrivateRoute>
         <Route exact path="/login" component={Login}></Route>
         <Route exact path="/signup" component={SignUp}></Route>
         <Route exact path="/forgotpassword" component={ForgotPassword}></Route>
         <PrivateRoute exact path="/account" component={Account}></PrivateRoute>
+        <PrivateRoute exact path="/tutorial" component={RealTutorial}></PrivateRoute>
 
         <Footer />
       </AuthProvider>

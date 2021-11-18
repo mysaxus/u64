@@ -1,0 +1,27 @@
+.topic{
+    display: flex;
+    margin-bottom: 1em;
+}
+
+.topic .box{
+    padding: 0;
+    margin: auto 5em;
+    border: 0;
+}
+
+.topic img{
+    min-width: 25em;
+    margin-left: 15%;
+}
+
+
+.tutorial .rating{
+    text-align: center;
+    font-weight: 600;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.tutorial h2{
+    padding-bottom: 1em;
+}

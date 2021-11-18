@@ -44,13 +44,13 @@ function Login(){
                         <label className="question">Email:</label>
                         <br/>
                         <br/>
-                        <input type="text" name="" ref={emailRef} required/>
+                        <input placeholder="example@gmail.com" type="text" name="" ref={emailRef} required/>
                         <br/>
                         <br/>
                         <label className="question">Senha:</label>
                         <br/>
                         <br/>
-                        <input type="password" name="" ref={passwordRef} required/>
+                        <input placeholder="password" type="password" name="" ref={passwordRef} required/>
                         <br/>
                         <br/>
                         <input disabled={loading} className="button" type="submit" value="Fazer login"/>
